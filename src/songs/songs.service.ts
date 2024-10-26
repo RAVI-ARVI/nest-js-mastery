@@ -3,11 +3,11 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class SongsService {
   private readonly songs = [];
-  createSong() {
-    this.songs.push('Test Song');
+  createSong(song) {
+    this.songs.push(song);
     return this.songs;
   }
   findSongs() {
-    return this.songs;
+    throw new Error('This From Database Error');
   }
 }
